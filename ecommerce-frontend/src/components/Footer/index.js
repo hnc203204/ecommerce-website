@@ -1,5 +1,5 @@
 import { Container, Typography } from "@material-ui/core";
-import {} from "@material-ui/icons";
+import { } from "@material-ui/icons";
 import { useStyles } from "./style";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export const Footer = (props) => {
       <div>
         <Container maxWidth="xl" className={classes.container}>
           <Typography variant="h5" component={Link} to="/">
-            ReactShop
+            SlayStore
           </Typography>
           <Typography component="span">
             Copyright &copy; {new Date().getFullYear()}.

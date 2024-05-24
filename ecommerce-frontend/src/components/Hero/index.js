@@ -14,13 +14,13 @@ export const Hero = () => {
     >
       <Grid item md={5} xs={12}>
         <Typography variant="h4" className={classes.heading}>
-          What is ReactShop?
+          What is SlayStore?
         </Typography>
         <Typography className={classes.detail}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-          animi quis dignissimos mollitia nemo quod, expedita explicabo facere
-          amet quaerat et sint vero sequi, alias fuga repudiandae asperiores?
-          Aut, enim.
+          Chào mừng bạn đến với Cửa hàng công nghệ SLAY!
+          Chúng tôi chuyên cung cấp các sản phẩm công nghệ cao cấp như điện thoại, laptop và thiết bị điện tử thông minh.
+          Với dịch vụ nhanh chóng và tiện lợi, chúng tôi cam kết mang đến cho bạn một trải nghiệm mua sắm tuyệt vời.
+          Hãy khám phá và mua sắm tại website của chúng tôi!
         </Typography>
         <Button
           size="large"

@@ -15,19 +15,23 @@ import {
   Paper,
   Avatar,
   CircularProgress,
+  Box,
 } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../../../redux/slices/product";
+import { fetchAllProducts } from "../../../redux/slices/product";
 import moment from "moment";
 import { addToCart } from "../../../redux/slices/user";
 import { Review } from "../../../components/Review/";
 import { Loader } from "../../../components/Loader/";
+import { Products } from "../../../components/Products/";
 
 export const ProductPage = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products.product);
+  const products = useSelector((state) => state.products.products);
   const cartLoading = useSelector((state) => state.users.cartLoading);
   const loading = useSelector((state) => state.products.loading);
   const { id } = useParams();
@@ -35,7 +39,8 @@ export const ProductPage = () => {
 
   useEffect(() => {
     dispatch(fetchProduct(id));
-  }, []);
+    dispatch(fetchAllProducts());
+  }, [id]);
 
   return (
     <Container maxWidth="lg" className={classes.root}>
@@ -133,6 +138,13 @@ export const ProductPage = () => {
           {product.reviews.map((review) => (
             <Review key={review._id} review={review} />
           ))}
+
+          <Typography variant="h5" className={classes.suggestionsHeading}>
+            You might also like
+          </Typography>
+          <Box marginTop={2}>
+            <Products products={products.filter(p => p._id !== product._id)} />
+          </Box>
         </>
       )}
     </Container>

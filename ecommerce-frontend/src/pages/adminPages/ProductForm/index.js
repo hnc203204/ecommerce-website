@@ -141,7 +141,7 @@ export const ProductForm = withAdminAuth(true)(({ edit }) => {
               className={classes.textField}
               label="Description"
               multiline
-              rows={4}
+              rows={null}
               value={description}
               onChange={changeDescriptionHandler}
             />

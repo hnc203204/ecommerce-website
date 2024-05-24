@@ -85,7 +85,7 @@ export const Header = () => {
           to="/"
           exact
         >
-          ReactShop
+          SlayStore
         </Typography>
 
         <Hidden smDown>

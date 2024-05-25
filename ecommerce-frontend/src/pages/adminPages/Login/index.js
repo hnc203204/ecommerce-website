@@ -8,7 +8,7 @@ import {
   CircularProgress,
   Box
 } from "@material-ui/core"
-import {} from "@material-ui/icons"
+import { } from "@material-ui/icons"
 import { useStyles } from "../../clientPages/Login/style"
 import { useDispatch, useSelector } from "react-redux"
 import { login } from "../../../redux/slices/admin"
@@ -46,7 +46,7 @@ export const Login = withAdminAuth(false)((props) => {
         <Typography>
           This is a demo site so you can use the following credentials:
         </Typography>
-        <Typography>admin@admin.com</Typography>
+        <Typography>admin@gmail.com</Typography>
         <Typography>admin</Typography>
       </Box>
 

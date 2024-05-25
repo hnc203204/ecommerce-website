@@ -52,7 +52,7 @@ const isLogin = createAsyncThunk("users/isLogin", async () => {
 const editUser = createAsyncThunk(
   "users/editUser",
   async ({ name, email, password, year, male }) => {
-    console.log(male);
+    // console.log(gender);
     try {
       const res = await UserAxios.patch(Api.UPDATE_USER, {
         name,

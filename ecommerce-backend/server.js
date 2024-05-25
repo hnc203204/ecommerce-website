@@ -4,6 +4,8 @@ require("dotenv").config()
 const cors = require("cors")
 const stripe = require("stripe")(process.env.STRIPE_SECRET)
 const helmet = require("helmet")
+const path = require('path');
+const fs = require('fs');
 
 const adminRoutes = require("./routes/admin")
 const userRoutes = require("./routes/user")
@@ -49,6 +51,7 @@ app.post(
     }
   }
 )
+
 
 app.use((error, req, res, next) => {
   res.status(error.status).json({ message: error.message })

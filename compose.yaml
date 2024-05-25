@@ -1,0 +1,39 @@
+
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo
+
+  backend:
+    image: ecommerse-backend
+    build:
+      context: .
+    command: npm start 
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    networks:
+      - mongo
+    
+  frontend:
+    image: ecommerce-frontend
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+  
+  ai_service:
+    image: ecommerce-ai-service
+    build:
+      context: .
+    command: python3 server.py
+    ports:
+      - "5522:5522"
+
+networks:
+  mongo:
+    driver: bridge

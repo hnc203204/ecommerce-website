@@ -21,6 +21,7 @@ export const GET_PRODUCT = (id) => `/product/${id}`;
 export const GET_PRODUCTS = "/product";
 export const GET_CATEGORY_PRODUCTS = (id) => `/product/category/${id}`;
 export const CREATE_REVIEW = (id) => `/product/${id}/review`;
+export const GET_RECOMMENDED_PRODUCTS = "/product/recommended";
 
 // Category routes
 export const CREATE_CATEGORY = "/category";

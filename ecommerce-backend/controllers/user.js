@@ -104,7 +104,11 @@ exports.patchUser = async (req, res, next) => {
     user.name = name;
     user.email = email;
     user.password = password;
-    user.male = male;
+    if (male == "male") {
+      user.male = true;
+    } else {
+      user.male = false;
+    }
     user.year = year;
     let newUser = await user.save();
     newUser = await User.populate(newUser, { path: "cart.items.product" });

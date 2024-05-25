@@ -10,7 +10,7 @@ import {
   Paper,
   Button,
 } from "@material-ui/core";
-import {} from "@material-ui/icons";
+import { } from "@material-ui/icons";
 import { useStyles } from "./style";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -37,6 +37,14 @@ export const Profile = withUserAuth(true)((props) => {
             <TableRow>
               <TableCell component="th">Email</TableCell>
               <TableCell>{user?.email}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell component="th">Year of Birth</TableCell>
+              <TableCell>{user?.year}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell component="th">Gender</TableCell>
+              <TableCell>{user?.male ? "Male" : "Female"}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>

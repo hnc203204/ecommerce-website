@@ -51,12 +51,15 @@ const isLogin = createAsyncThunk("users/isLogin", async () => {
 
 const editUser = createAsyncThunk(
   "users/editUser",
-  async ({ name, email, password }) => {
+  async ({ name, email, password, year, male }) => {
+    console.log(male);
     try {
       const res = await UserAxios.patch(Api.UPDATE_USER, {
         name,
         email,
         password,
+        year,
+        male
       });
       history.push("/profile");
       return res.data.user;

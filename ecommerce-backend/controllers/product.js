@@ -173,6 +173,21 @@ exports.getProducts = async (req, res, next) => {
   }
 };
 
+const apriori = async (categories) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ 
+      'basket' : categories 
+    }),
+  }
+  resp = await fetch(process.env.AI_URL, options);
+  result = await resp.json();
+  return result;
+}
+
 exports.getRecommendedProducts = async (req, res, next) => {
   const user = await User.findById(req.userId).populate("cart.items.product");
   if (!user) {

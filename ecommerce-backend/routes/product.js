@@ -15,6 +15,7 @@ const getCurrentId = require("../middlewares/getUser");
 router.post("/", checkAuth(), postProduct);
 router.patch("/:id", checkAuth(), patchProduct);
 router.delete("/:id", checkAuth(), deleteProduct);
+router.get("/recommended", checkAuth("user"), getRecommendedProducts);
 router.get("/:id", getProduct);
 router.get("/",getProducts);
 router.get("/category/:id", getCategoryProducts);

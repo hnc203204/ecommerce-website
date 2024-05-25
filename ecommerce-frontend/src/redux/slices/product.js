@@ -15,8 +15,18 @@ const initialState = {
 const fetchAllProducts = createAsyncThunk(
   "products/fetchAllProducts",
   async () => {
-    const res = await Axios.get(Api.GET_PRODUCTS);
-    return res.data.products;
+    const token = localStorage.getItem("userToken");
+    if (!token) {
+      const res = await Axios.get(Api.GET_PRODUCTS);
+      return res.data.products;
+    }
+
+    const res = await Axios.get(Api.GET_RECOMMENDED_PRODUCTS, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    return res.data.recommended_prod;
   }
 );
 

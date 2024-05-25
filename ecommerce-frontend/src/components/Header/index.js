@@ -32,7 +32,7 @@ import { userLogout } from "../../redux/slices/user"
 
 export const Header = () => {
   const dispatch = useDispatch()
-  const categories = useSelector((state) => state.categories.categories)
+  const categories = useSelector((state) => state.categories.categories) || []
   const user = useSelector((state) => state.users.user)
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)

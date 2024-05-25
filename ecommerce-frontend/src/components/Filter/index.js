@@ -8,7 +8,7 @@ import { applyFilter } from "../../redux/slices/product";
 export const Filter = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.categories.categories);
+  const categories = useSelector((state) => state.categories.categories) || [];
   const [filter, setFilter] = useState("All");
 
   useEffect(() => {

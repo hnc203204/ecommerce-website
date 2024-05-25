@@ -28,7 +28,7 @@ import { userLogout } from "../../redux/slices/user"
 
 export const Sidebar = (props) => {
   const dispatch = useDispatch()
-  const categories = useSelector((state) => state.categories.categories)
+  const categories = useSelector((state) => state.categories.categories) || []
   const [anchorEl, setAnchorEl] = useState(null)
   const classes = useStyles()
   const user = useSelector((state) => state.users.user)

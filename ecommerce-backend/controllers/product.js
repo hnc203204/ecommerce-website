@@ -174,6 +174,7 @@ exports.getProducts = async (req, res, next) => {
 };
 
 const apriori = async (categories) => {
+  console.log(categories)
   const options = {
     method: "POST",
     headers: {

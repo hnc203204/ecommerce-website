@@ -52,6 +52,11 @@ app.post(
   }
 )
 
+app.use(express.static(path.join(__dirname, '../ecommerce-frontend/build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../ecommerce-frontend/build', 'index.html'));
+});
 
 app.use((error, req, res, next) => {
   res.status(error.status).json({ message: error.message })

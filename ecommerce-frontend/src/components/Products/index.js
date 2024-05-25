@@ -2,6 +2,7 @@ import { Product } from "../Product/";
 import { Grid } from "@material-ui/core";
 
 export const Products = ({ products }) => {
+  products = products || [];
   return (
     <Grid container spacing={5}>
       {products.map((product) => (

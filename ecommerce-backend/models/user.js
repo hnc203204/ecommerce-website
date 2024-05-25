@@ -16,6 +16,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  year: {
+    type: Number,
+    required: false,
+  },
+  male : {
+    type: Boolean,
+    required: false,
+  },
   cart: {
     items: [
       {

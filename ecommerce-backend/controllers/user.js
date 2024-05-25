@@ -76,7 +76,7 @@ exports.getIsLogin = async (req, res, next) => {
 };
 
 exports.patchUser = async (req, res, next) => {
-  let { name, email, password } = req.body;
+  let { name, email, password, year, male } = req.body;
   name = name.trim();
   email = email.trim();
 
@@ -104,6 +104,8 @@ exports.patchUser = async (req, res, next) => {
     user.name = name;
     user.email = email;
     user.password = password;
+    user.male = male;
+    user.year = year;
     let newUser = await user.save();
     newUser = await User.populate(newUser, { path: "cart.items.product" });
     res.json({ user: newUser });

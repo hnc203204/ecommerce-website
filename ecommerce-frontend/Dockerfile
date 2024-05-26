@@ -5,7 +5,7 @@ FROM node:latest AS build
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # Install dependencies
 RUN npm install
@@ -13,7 +13,7 @@ RUN npm install
 # Copy the entire project to the working directory
 COPY . .
 
-ENV REACT_APP_API_ENDPOINT="http://localhost:8000"
+ENV REACT_APP_API_ENDPOINT="https://web-production-fb1d.up.railway.app"
 
 # Build the React app
 RUN npm run build
@@ -25,4 +25,4 @@ RUN npm install -g serve
 EXPOSE 3000
 
 # Command to serve the built React app with Serve
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["npm", "start"]

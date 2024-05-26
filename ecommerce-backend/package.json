@@ -1,26 +1,25 @@
 {
-  "name": "Backend",
+  "name": "ecommerce-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "startDev": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "keywords": [],
+  "engines": {
+    "node": "22.x"
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  },
+  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^8.6.0",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.17.1",
-    "helmet": "^4.4.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.14",
-    "stripe": "^8.132.0"
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "stripe": "^15.8.0"
   }
 }
